@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Antonio A. Scolari</title>
+        <meta name="author" content="Antonio Scolari" />
+        <meta name="description" content="" />
+    </head>
+
+    <body>
+        <div>
+            <p>
+                Webpage made by {{user}}
+            </p>
+        </div>
+        <div>
+            {{ content | safe }}
+        </div>
+    </body>
+</html>
+<script>
+setInterval(function() {
+    $.ajax({
+      type: "POST",
+      url: "/dumb",
+    })
+      .done(function( price ) {
+        $("#price-box").val(price)
+      });
+}, 1000 );
+</script>
